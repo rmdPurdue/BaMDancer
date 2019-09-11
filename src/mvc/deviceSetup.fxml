@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.2867332382310984" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1180.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.DeviceSetupController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="beginScanButton" layoutX="85.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="78.0" text="SCAN">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="cancelScanButton" layoutX="173.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="78.0" text="CANCEL">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <ProgressBar fx:id="scanProgress" layoutX="18.0" layoutY="126.0" prefHeight="20.0" prefWidth="300.0" progress="0.0" />
+            <TableView fx:id="deviceTableView" layoutX="18.0" layoutY="163.0" prefHeight="414.0" prefWidth="300.0">
+              <columns>
+                <TableColumn fx:id="deviceNameColumn" prefWidth="125.0" text="Device List" />
+                  <TableColumn fx:id="deviceTypeColumn" prefWidth="174.0" text="Device Type" />
+              </columns>
+            </TableView>
+            <Label layoutX="114.0" layoutY="30.0" text="Network Scan" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="addDeviceButton" layoutX="81.0" layoutY="595.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="173.0" text="ADD DEVICE MANUALLY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Label layoutX="69.0" layoutY="75.0" prefHeight="24.0" prefWidth="106.0" text="Device Name:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="551.0" layoutY="75.0" prefHeight="24.0" prefWidth="97.0" text="MAC Address:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="69.0" layoutY="223.0" prefHeight="24.0" prefWidth="173.0" text="Destination IP Address:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="69.0" layoutY="262.0" prefHeight="24.0" prefWidth="129.0" text="Destination Port:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <TableView fx:id="inputSettingsTableView" editable="true" layoutX="70.0" layoutY="324.0" prefHeight="233.0" prefWidth="715.0">
+              <columns>
+                <TableColumn fx:id="inputNumberColumn" prefWidth="75.0" text="Input" />
+                <TableColumn fx:id="minValueColumn" prefWidth="137.0" text="Min" />
+                  <TableColumn fx:id="maxValueColumn" prefWidth="119.0" text="Max" />
+                  <TableColumn fx:id="calibrateColumn" prefWidth="225.0" text="Calibrate" />
+                  <TableColumn fx:id="filterWeightColumn" prefWidth="158.0" text="Filter Weight" />
+              </columns>
+            </TableView>
+            <TextField fx:id="deviceNameTextField" layoutX="243.0" layoutY="72.0" prefHeight="27.0" prefWidth="160.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="portNumberTextField" layoutX="243.0" layoutY="261.0" prefHeight="30.0" prefWidth="160.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="hubIPAddressTextField" layoutX="243.0" layoutY="222.0" prefWidth="160.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label id="macAddress" fx:id="macAddress" focusTraversable="false" layoutX="662.0" layoutY="77.0" text="aa-bb-cc-dd-ee-ff">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+            <Button fx:id="saveButton" layoutX="571.0" layoutY="575.0" mnemonicParsing="false" text="Update Firmware">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="cancelButton" layoutX="721.0" layoutY="575.0" mnemonicParsing="false" text="Cancel">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="editNameButton" layoutX="416.0" layoutY="72.0" mnemonicParsing="false" text="Edit">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="acceptNameButton" layoutX="474.0" layoutY="72.0" mnemonicParsing="false" text="Accept">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="editPortButton" layoutX="415.0" layoutY="261.0" mnemonicParsing="false" text="Edit">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="acceptPortButton" layoutX="473.0" layoutY="261.0" mnemonicParsing="false" text="Accept">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="editIPAddressButton" layoutX="415.0" layoutY="222.0" mnemonicParsing="false" text="Edit">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="acceptIPAddressButton" layoutX="473.0" layoutY="222.0" mnemonicParsing="false" text="Accept">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Label layoutX="70.0" layoutY="30.0" text="Device Configuration" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="114.0" prefHeight="24.0" prefWidth="129.0" text="Device IP Address:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="188.0" prefHeight="24.0" prefWidth="129.0" text="Device Type:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="152.0" prefHeight="24.0" prefWidth="129.0" text="Device OSC Port:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ipAddressTextField" layoutX="243.0" layoutY="111.0" prefHeight="27.0" prefWidth="160.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="rxPortTextField" layoutX="243.0" layoutY="149.0" prefHeight="27.0" prefWidth="160.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="acceptRxIpButton" layoutX="474.0" layoutY="111.0" mnemonicParsing="false" text="Accept">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="acceptRxPortButton" layoutX="474.0" layoutY="149.0" mnemonicParsing="false" text="Accept">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="editRxIpButton" layoutX="416.0" layoutY="111.0" mnemonicParsing="false" text="Edit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="editRxPortButton" layoutX="416.0" layoutY="149.0" mnemonicParsing="false" text="Edit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="deviceTypeComboBox" layoutX="242.0" layoutY="188.0" prefHeight="25.0" prefWidth="160.0" />
+            <Button fx:id="acceptTypeButton" layoutX="474.0" layoutY="186.0" mnemonicParsing="false" text="Accept">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="editTypeButton" layoutX="416.0" layoutY="185.0" mnemonicParsing="false" text="Edit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

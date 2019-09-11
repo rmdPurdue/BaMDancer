@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1180.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mvc.CueListController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Label layoutX="141.0" layoutY="10.0" text="Cue List" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="cueListTableView" editable="true" layoutX="24.0" layoutY="44.0" prefHeight="464.0" prefWidth="300.0">
+               <columns>
+                  <TableColumn fx:id="cueListNumberColumn" prefWidth="68.0" text="#" />
+                  <TableColumn fx:id="cueListLabelColumn" prefWidth="231.0" text="Label" />
+               </columns>
+            </TableView>
+            <Button fx:id="deleteCueButton" layoutX="246.0" layoutY="586.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" text="DELETE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="copyCueButton" layoutX="130.0" layoutY="586.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="89.0" text="DUPLICATE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="newCueButton" layoutX="23.0" layoutY="586.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="89.0" text="ADD CUE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="cueNumberTextField" layoutX="23.0" layoutY="550.0" prefHeight="30.0" prefWidth="67.0" promptText="Cue #" style="-fx-test-fill: black;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="cueLabelTextField" layoutX="94.0" layoutY="550.0" prefHeight="30.0" prefWidth="227.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label fx:id="errorLabel" layoutX="26.0" layoutY="505.0" prefHeight="47.0" prefWidth="300.0" text="Label" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Label layoutX="70.0" layoutY="30.0" text="Cue Edit" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="cueNumberLabel" layoutX="70.0" layoutY="75.0" prefHeight="24.0" prefWidth="106.0" text="Cue Number:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="115.0" prefHeight="24.0" prefWidth="106.0" text="Cue Label:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="mappingTableView" layoutX="19.0" layoutY="168.0" prefHeight="286.0" prefWidth="788.0">
+              <columns>
+                <TableColumn fx:id="mappingDeviceColumn" editable="false" prefWidth="155.0" text="Device" />
+                <TableColumn fx:id="mappingInputColumn" editable="false" prefWidth="61.0" text="Input" />
+                  <TableColumn fx:id="mappingDestinationColumn" editable="false" prefWidth="109.0" text="Destination" />
+                  <TableColumn fx:id="mappingURLColumn" editable="false" prefWidth="201.0" text="OSC URL" />
+                  <TableColumn fx:id="mappingAlgorithmColumn" editable="false" prefWidth="108.0" text="Algorithm" />
+                  <TableColumn fx:id="remoteMacAddressColumn" editable="false" prefWidth="228.0" text="macAddress" />
+              </columns>
+            </TableView>
+            <Button fx:id="addMappingButton" layoutX="19.0" layoutY="465.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="106.0" text="ADD MAPPING">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="removeMappingButton" layoutX="140.0" layoutY="465.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="134.0" text="REMOVE MAPPING">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="cueNumberDisplayLabel" layoutX="176.0" layoutY="75.0" prefHeight="24.0" prefWidth="300.0" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="cueDescriptionDisplayLabel" layoutX="176.0" layoutY="115.0" prefHeight="24.0" prefWidth="300.0" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
